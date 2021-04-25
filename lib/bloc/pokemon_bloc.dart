@@ -17,12 +17,13 @@ class PokemonBloc extends Bloc<PokemonEvent, PokemonState> {
       yield PokemonLoadInProgress();
       try {
         final PokemonPageResponse pokemonPageResponse =
-            await _pokemonRepository.getPokemonPage(0);
+            await _pokemonRepository.getPokemonPage(event.page);
         yield PokemonPageLoadSuccess(
           pokemonListings: pokemonPageResponse.pokemonListings,
           canLoadNextPage: pokemonPageResponse.canLoadNextPage,
         );
       } catch (e) {
+        print(e);
         yield (PokemonPageLoadFailed(error: e));
       }
     }

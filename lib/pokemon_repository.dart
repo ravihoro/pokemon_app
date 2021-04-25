@@ -10,7 +10,7 @@ class PokemonRepository {
   Future<PokemonPageResponse> getPokemonPage(int pageIndex) async {
     final queryParameters = {
       'limit': '200',
-      'offset': (pageIndex * 200).toString(),
+      'offset': (pageIndex * 200).toString()
     };
 
     final uri = Uri.https(baseUrl, '/api/v2/pokemon', queryParameters);
