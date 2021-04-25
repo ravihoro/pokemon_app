@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:pokemon_app/pokemon_page_response.dart';
-import 'package:pokemon_app/pokemon_repository.dart';
+import 'package:pokemon_app/data/pokemon_page_response.dart';
+import 'package:pokemon_app/data/pokemon_repository.dart';
 
 part 'pokemon_event.dart';
 part 'pokemon_state.dart';
