@@ -32,8 +32,9 @@ class PokemonPageResponse {
 
   factory PokemonPageResponse.fromJson(Map<String, dynamic> json) {
     final canLoadNextPage = json['next'] != null;
-    final pokemonListings =
-        (json['result'] as List).map((e) => PokemonListing.fromJson(e));
+    final pokemonListings = (json['result'] as List)
+        .map((e) => PokemonListing.fromJson(e))
+        .toList();
     return PokemonPageResponse(
       pokemonListings: pokemonListings,
       canLoadNextPage: canLoadNextPage,
